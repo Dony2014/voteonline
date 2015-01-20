@@ -5,7 +5,7 @@
 **/.idea/tasks.xml
 /.classpath
 /.project
-/hackthon.iml
+/*.iml
 
 # Windows image file caches
 Thumbs.db
