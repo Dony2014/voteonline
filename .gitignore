@@ -5,7 +5,11 @@
 **/.idea/tasks.xml
 /.classpath
 /.project
+<<<<<<< HEAD
 /*.imi
+=======
+/*.iml
+>>>>>>> origin/master
 
 # Windows image file caches
 Thumbs.db
