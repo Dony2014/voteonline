@@ -7,9 +7,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by Dong on 2015/12/12.
- */
 public class LoginAccessInterceptor extends HandlerInterceptorAdapter {
     private static final Logger logger = LoggerFactory.getLogger(LoginAccessInterceptor.class);
 
@@ -17,8 +14,14 @@ public class LoginAccessInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (logger.isDebugEnabled()) {
             String ipAddress = this.getIpAddr(request);
-            logger.debug(request.getCookies()[0].getValue());
-            logger.debug(ipAddress + "do a login action!");
+            if (null != request.getCookies()) {
+                int count = request.getCookies().length;
+                for (int i = 0; i < count; i++) {
+                    logger.debug(request.getCookies()[i].getValue());
+                }
+                logger.debug(request.getHeaderNames().toString());
+            }
+            logger.debug(ipAddress + ":do a login action!");
         }
         return true;
     }
