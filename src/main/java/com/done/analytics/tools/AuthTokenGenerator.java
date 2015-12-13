@@ -1,4 +1,4 @@
-package com.done.analytics.controller;
+package com.done.analytics.tools;
 
 import java.util.Random;
 
