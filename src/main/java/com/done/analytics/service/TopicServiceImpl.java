@@ -45,7 +45,7 @@ public class TopicServiceImpl implements TopicService {
     public List<Topic> listTopics(String selectedTopics) {
         List<Topic> topicList = this.topicDAO.getTopicList();
         for (Topic topic : topicList) {
-            if (selectedTopics.contains(new Integer(topic.getId()).toString())) {
+            if (selectedTopics.contains(Integer.toString(topic.getId()))) {
                 topic.setIsSelected(true);
             }
         }
@@ -57,7 +57,7 @@ public class TopicServiceImpl implements TopicService {
     public void updateTopicsVote(String selectedTopics) {
 
         for (Topic topic : this.topicDAO.getTopicList()) {
-            if (selectedTopics.contains(new Integer(topic.getId()).toString())) {
+            if (selectedTopics.contains(Integer.toString(topic.getId()))) {
                 topic.setTicketCount(topic.getTicketCount() + 1);
             }
         }
@@ -72,7 +72,7 @@ public class TopicServiceImpl implements TopicService {
             VoteResult result = new VoteResult();
             result.setTopicOwner(topic.getOwnerID());
             result.setTopicName(topic.getTopicName());
-            result.setPresentor(topic.getPresentor());
+            result.setPresenter(topic.getPresentor());
             double percentage = (topic.getTicketCount() / (double) userCount) * 100;
             percentage = Math.round(percentage);
             result.setPercentage(percentage + "%");

@@ -9,30 +9,27 @@ import javax.persistence.*;
  */
 @Component
 @Entity
-@Table(name = "TOPIC")
-public class Topic implements Comparable {
+public class Topic implements Comparable<Topic> {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
-    @Column(name = "topicname")
+    @Column
     private String topicName;
 
-    @Column(name = "ticketcount", nullable = false)
+    @Column(nullable = false)
     private int ticketCount = 0;
 
-    @Column(name = "description")
+    @Column
     private String description;
 
-    @Column(name = "ownerid")
+    @Column
     private String ownerID;
 
-    @Column(name = "isSelected")
+    @Column
     private Boolean isSelected;
 
-    @Column(name = "presentor")
+    @Column
     private String presentor;
 
     public String getPresentor() {
@@ -92,17 +89,52 @@ public class Topic implements Comparable {
         this.ownerID = ownerID;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        Topic temp = (Topic) o;
-        if (this.getTopicName().compareTo(temp.getTopicName()) > 1) {
-            return 1;
-        } else if (this.getTopicName().compareTo(temp.getTopicName()) < 1) {
-            return -1;
-        } else {
-            return 0;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Topic topic = (Topic) o;
+        if (id != topic.id) return false;
+        if (!topicName.equals(topic.topicName)) return false;
+        return ownerID.equals(topic.ownerID) && this.compareTo(topic) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + topicName.hashCode();
+        result = 31 * result + ownerID.hashCode();
+        return result;
+    }
+
+    @Override
+    public int compareTo(Topic topic) {
+        if (this.hashCode() == topic.hashCode()) {
+            return 0;
+        } else if (this.hashCode() > topic.hashCode()) {
+            return 1;
+        } else {
+            return -1;
         }
     }
+
+    public static void main(String[] args) {
+        Topic topic1 = new Topic();
+        Topic topic2 = new Topic();
+        topic1.setId(2);
+        topic1.setOwnerID("22");
+        topic1.setTopicName("2");
+
+        topic2.setId(2);
+        topic2.setOwnerID("22");
+        topic2.setTopicName("2");
+
+        System.out.println(topic1.compareTo(topic2));
+        System.out.println(topic1.hashCode());
+        System.out.println(topic2.hashCode());
+    }
+
 }
 

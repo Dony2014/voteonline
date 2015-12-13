@@ -121,7 +121,9 @@
                                                                 </td>
                                                                 <td style="text-align: center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 70%;"
                                                                     align="center" rowspan="1" colspan="1">
-                                                                    <input align="center" type="text" name="presentor"  <c:if test="${Full!=null}">disabled="disabled" </c:if> style="width: 50%;"/><br>
+                                                                    <input align="center" type="text" name="presenter"
+                                                                           <c:if test="${Full!=null}">disabled="disabled" </c:if>
+                                                                           style="width: 50%;"/><br>
                                                                 </td>
                                                             </tr>
                                                             <tr>

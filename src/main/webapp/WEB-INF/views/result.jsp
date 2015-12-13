@@ -113,7 +113,7 @@
                                                                         </td>
                                                                         <td style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 25%;"
                                                                             align="left" rowspan="1" colspan="1">
-                                                                                ${topic.presentor}<br>
+																				${topic.presenter}<br>
                                                                         </td>
 
                                                                     </tr>

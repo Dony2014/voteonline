@@ -3,32 +3,33 @@ package com.done.analytics.domain;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Dony on 10/24/2014.
  */
 @Component
 @Entity
-@Table(name = "USER")
-public class User {
+@Table
+public class User implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "username")
+    @Column
     private String userName;
 
-    @Column(name = "password")
+    @Column
     private String password;
 
-    @Column(name = "isvoted", nullable = false)
+    @Column(nullable = false)
     private Boolean isVoted = false;
 
-    @Column(name = "votedtopics")
-    private String votedTopics = "";
+    @Column(nullable = false)
+    private String votedTopics;
 
-    @Column(name = "availablecount")
-    private int availableCount ;
+    @Column
+    private int availableCount;
 
     public int getAvailableCount() {
         return availableCount;
