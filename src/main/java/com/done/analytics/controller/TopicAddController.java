@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by Dony on 10/31/2014.
- */
 @Controller
 public class TopicAddController {
 
@@ -51,7 +48,7 @@ public class TopicAddController {
     public String toAddTopic(HttpServletRequest request, Model model, @ModelAttribute("addtopic") Topic topic) {
         User user = (User) request.getSession().getAttribute("current_use");
         if (user == null) {
-            return "index_bak";
+            return "index";
         } else if (topic == null || "".equals(topic.getTopicName().trim()) || "".equals(topic.getDescription().trim())) {
             model.addAttribute("user", user);
             model.addAttribute("message", "Yes");

@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by Dony on 10/27/2014.
- */
 @Controller
 
 public class VoteController {
@@ -37,7 +34,7 @@ public class VoteController {
         User user = (User) request.getSession().getAttribute("current_use");
         if (user == null) {
             return "redirect:/index";
-        } else if (user != null && user.getIsVoted().booleanValue()) {
+        } else if (user.getIsVoted()) {
             model.addAttribute("message", "You have completed the vote!!");
             model.addAttribute("disabledFlag", true);
             model.addAttribute("topicsList", topicService.listTopics(user.getVotedTopics()));
@@ -52,9 +49,9 @@ public class VoteController {
     public String voteTopics(HttpServletRequest request, Model model, @RequestParam(value = "selectedTopics") String selectedTopics) {
         User user = (User) request.getSession().getAttribute("current_use");
         if (user == null) {
-            return "index_bak";
+            return "index";
         }
-        if (!userService.queryUser(user).getIsVoted().booleanValue()) {
+        if (!userService.queryUser(user).getIsVoted()) {
             if (selectedTopics.split(",").length > 6) {
                 model.addAttribute("message", "You only can select three topics for this vote!!!!");
                 model.addAttribute("topicsList", topicService.listTopics());
