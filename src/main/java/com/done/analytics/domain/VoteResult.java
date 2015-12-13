@@ -1,4 +1,4 @@
-package com.oracle.emqa.model;
+package com.done.analytics.domain;
 
 /**
  * Created by Dony on 10/28/2014.

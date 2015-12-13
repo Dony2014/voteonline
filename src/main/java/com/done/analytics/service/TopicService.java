@@ -1,7 +1,7 @@
-package com.oracle.emqa.service;
+package com.done.analytics.service;
 
-import com.oracle.emqa.model.Topic;
-import com.oracle.emqa.model.VoteResult;
+import com.done.analytics.domain.Topic;
+import com.done.analytics.domain.VoteResult;
 
 import java.util.List;
 

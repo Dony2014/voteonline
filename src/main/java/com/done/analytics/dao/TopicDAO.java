@@ -1,6 +1,6 @@
-package com.oracle.emqa.dao;
+package com.done.analytics.dao;
 
-import com.oracle.emqa.model.Topic;
+import com.done.analytics.domain.Topic;
 
 import java.util.List;
 

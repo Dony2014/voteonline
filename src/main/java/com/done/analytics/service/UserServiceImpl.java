@@ -1,7 +1,7 @@
-package com.oracle.emqa.service;
+package com.done.analytics.service;
 
-import com.oracle.emqa.dao.UserDAO;
-import com.oracle.emqa.model.User;
+import com.done.analytics.dao.UserDAO;
+import com.done.analytics.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by Dony on 10/24/2014.
  */
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     private UserDAO userDao;

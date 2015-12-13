@@ -1,4 +1,4 @@
-package com.oracle.emqa.model;
+package com.done.analytics.domain;
 
 import org.springframework.stereotype.Component;
 

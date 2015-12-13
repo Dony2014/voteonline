@@ -1,7 +1,7 @@
-package com.oracle.emqa.dao;
+package com.done.analytics.dao;
 
 
-import com.oracle.emqa.model.Topic;
+import com.done.analytics.domain.Topic;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Dony on 10/27/2014.
  */
-@Repository
+@Repository("topicDao")
 public class TopicDAOImpl implements TopicDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(TopicDAOImpl.class);

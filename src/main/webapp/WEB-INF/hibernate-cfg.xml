@@ -4,14 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory >
-        <!--  -->
-
-
-        <!--
-        <mapping resource="com/huasoft/domain/Student.hbm.xml"/>
-        -->
-        <mapping class="com.oracle.emqa.model.User"/>
-        <mapping class="com.oracle.emqa.model.Topic"/>
-
+        <mapping class="com.done.analytics.domain.User"/>
+        <mapping class="com.done.analytics.domain.Topic"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,8 +1,8 @@
-package com.oracle.emqa.controller;
+package com.done.analytics.controller;
 
-import com.oracle.emqa.model.User;
-import com.oracle.emqa.service.TopicService;
-import com.oracle.emqa.service.UserService;
+import com.done.analytics.domain.User;
+import com.done.analytics.service.TopicService;
+import com.done.analytics.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +52,7 @@ public class VoteController {
     public String voteTopics(HttpServletRequest request, Model model, @RequestParam(value = "selectedTopics") String selectedTopics) {
         User user = (User) request.getSession().getAttribute("current_use");
         if (user == null) {
-            return "index";
+            return "index_bak";
         }
         if (!userService.queryUser(user).getIsVoted().booleanValue()) {
             if (selectedTopics.split(",").length > 6) {

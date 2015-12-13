@@ -1,9 +1,9 @@
-package com.oracle.emqa.service;
+package com.done.analytics.service;
 
-import com.oracle.emqa.dao.TopicDAO;
-import com.oracle.emqa.dao.UserDAO;
-import com.oracle.emqa.model.Topic;
-import com.oracle.emqa.model.VoteResult;
+import com.done.analytics.dao.TopicDAO;
+import com.done.analytics.dao.UserDAO;
+import com.done.analytics.domain.Topic;
+import com.done.analytics.domain.VoteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Dony on 10/27/2014.
  */
 
-@Service
+@Service("topicService")
 public class TopicServiceImpl implements TopicService {
 
     private TopicDAO topicDAO;

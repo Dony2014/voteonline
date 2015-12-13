@@ -1,8 +1,8 @@
-package com.oracle.emqa.controller;
+package com.done.analytics.controller;
 
 
-import com.oracle.emqa.model.User;
-import com.oracle.emqa.service.UserService;
+import com.done.analytics.domain.User;
+import com.done.analytics.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +30,15 @@ public class IndexController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = {"/hackthon", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/analytics", "/"}, method = RequestMethod.GET)
     public String index(HttpServletRequest request) {
         User user = (User) request.getAttribute("current_use");
         if (user != null) {
             return "redirect:/result";
         }
+        logger.info("----------------test----------------");
+        logger.debug("----------------test----------------");
+
         return "index";
 
     }
@@ -57,7 +60,7 @@ public class IndexController {
 
         } else {
             model.addAttribute("message", "Invalid user name and password");
-            return "index";
+            return "index_bak";
         }
 
     }

@@ -1,6 +1,6 @@
-package com.oracle.emqa.dao;
+package com.done.analytics.dao;
 
-import com.oracle.emqa.model.User;
+import com.done.analytics.domain.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Dony on 10/24/2014.
  */
 
-@Repository
+@Repository("userDao")
 public class UserDAOImpl implements UserDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);

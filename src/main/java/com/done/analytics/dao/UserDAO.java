@@ -1,6 +1,6 @@
-package com.oracle.emqa.dao;
+package com.done.analytics.dao;
 
-import com.oracle.emqa.model.User;
+import com.done.analytics.domain.User;
 
 /**
  * Created by Dony on 10/24/2014.
