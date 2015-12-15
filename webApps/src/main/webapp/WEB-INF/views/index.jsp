@@ -46,6 +46,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit Stack</button>
         </form>
+        <img src="./resources/images/button.png" >
     </div>
 </div>
 <!--.content-->
