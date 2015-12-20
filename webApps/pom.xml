@@ -84,7 +84,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>4.3.5.Final</version>
         </dependency>
-        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
@@ -97,7 +96,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.29</version>
         </dependency>
-
 
         <!-- Servlet -->
         <dependency>
