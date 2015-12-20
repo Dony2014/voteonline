@@ -17,14 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController
 {
 
-    private UserService userService;
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
-
-    @Autowired
-    public void setUserService(UserService userService)
-    {
-        this.userService = userService;
-    }
 
     @RequestMapping(value = {"/analytics", "/"}, method = RequestMethod.GET)
     public String index(HttpServletRequest request)
